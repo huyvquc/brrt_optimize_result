@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Dashboard - 2026_05_03</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --border-color: #30363d;
+            --header-bg: #010409;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 2rem 0;
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--accent-blue), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            padding-bottom: 5rem;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-green);
+            box-shadow: 0 10px 30px rgba(63, 185, 80, 0.1);
+        }
+        .card h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .card p {
+            margin-top: 0.5rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+        .card.missing {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .card.missing::after {
+            content: "Coming Soon";
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: #f85149;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .badge {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Experiment Results Dashboard</h1>
+        <p>Date: May 03, 2026</p>
+    </header>
+
+    <div class="container">
+        <!-- 200x200 Section -->
+        <div class="section">
+            <div class="section-title">
+                <span class="badge">Resolution</span> 200x200
+            </div>
+            <div class="grid">
+                <a href="output_escape_trap_5_200x200_new_blobs_merged.html" class="card">
+                    <h3>Blobs</h3>
+                    <p>Obstacle density variation</p>
+                </a>
+                <a href="output_escape_trap_5_200x200_new_narrow_merged.html" class="card">
+                    <h3>Narrow</h3>
+                    <p>Narrow passage challenges</p>
+                </a>
+                <a href="output_escape_trap_5_200x200_new_flappy_merged.html" class="card">
+                    <h3>Flappy</h3>
+                    <p>Vertical gap navigation</p>
+                </a>
+                <a href="output_escape_trap_5_200x200_new_rooms_merged.html" class="card">
+                    <h3>Rooms</h3>
+                    <p>Indoor corridor scenarios</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 500x500 Section -->
+        <div class="section">
+            <div class="section-title">
+                <span class="badge">Resolution</span> 500x500
+            </div>
+            <div class="grid">
+                <a href="output_escape_trap_5_500x500_test_blobs_merged.html" class="card">
+                    <h3>Blobs</h3>
+                    <p>Large scale obstacle field</p>
+                </a>
+                <a href="output_escape_trap_5_500x500_test_narrow_merged.html" class="card">
+                    <h3>Narrow</h3>
+                    <p>Extended narrow passages</p>
+                </a>
+                <a href="output_escape_trap_5_500x500_test_flappy_merged.html" class="card">
+                    <h3>Flappy</h3>
+                    <p>Large scale flappy maps</p>
+                </a>
+                <!-- Rooms 500x500 is likely still running or results not merged yet -->
+                <a href="output_escape_trap_5_500x500_test_rooms_merged.html" class="card">
+                    <h3>Rooms</h3>
+                    <p>Complex large scale rooms</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
